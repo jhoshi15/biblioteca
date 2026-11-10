@@ -1,0 +1,1003 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="BiblioTech Escolar: descubre libros de literatura, ciencia e historia en nuestra biblioteca digital.">
+
+    <meta name="author" content="Proyecto BiblioTech Escolar">
+    <meta name="theme-color" content="#101b35">
+
+    <title>BiblioTech Escolar | Biblioteca Digital</title>
+
+    <!-- CONEXION CON CSS -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================================= -->
+    <!-- 1. BARRA DE NAVEGACION -->
+    <!-- ================================= -->
+
+    <header class="navbar" id="navbar">
+
+        <a href="#inicio" class="logo" aria-label="BiblioTech, ir al inicio">
+            <span class="logo-icono">📚</span>
+            Biblio<span>Tech</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="menuNavegacion">
+            ☰
+        </button>
+
+        <nav class="menu" id="menuNavegacion">
+
+            <a href="#inicio">Inicio</a>
+
+            <a href="#catalogo">Catálogo</a>
+
+            <a href="#novedades">Novedades</a>
+
+            <a href="#populares">Más leídos</a>
+
+            <a href="#favoritos">Favoritos</a>
+
+            <a href="#normas">Normativas</a>
+
+        </nav>
+
+        <div class="estado-web">
+            <span class="punto"></span>
+            Sistema activo
+        </div>
+
+    </header>
+
+
+    <!-- ================================= -->
+    <!-- 2. PORTADA PRINCIPAL -->
+    <!-- ================================= -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <span class="etiqueta">
+                ✦ BIBLIOTECA ESCOLAR DIGITAL
+            </span>
+
+            <h1>
+                Un mundo de conocimientos
+                <span>te espera.</span>
+            </h1>
+
+            <p>
+                Explora nuevas historias, descubre conocimientos
+                y encuentra tu próximo libro favorito.
+                El conocimiento comienza con una lectura.
+            </p>
+
+            <!-- BUSCADOR PRINCIPAL -->
+
+            <form class="buscador" id="formBusqueda">
+
+                <span class="icono-busqueda">🔍</span>
+
+                <input
+                    type="search"
+                    id="busqueda"
+                    placeholder="Busca por título, autor o categoría..."
+                    aria-label="Buscar libros"
+                    autocomplete="off">
+
+                <button type="submit" id="btnBuscar">
+                    Buscar
+                </button>
+
+            </form>
+
+            <div class="hero-info">
+
+                <span>📖 Aprende</span>
+                <span>🌎 Descubre</span>
+                <span>🚀 Imagina</span>
+
+            </div>
+
+            <div class="hero-extra">
+
+                <span>✨ Miles de historias por descubrir</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- DECORACION -->
+
+        <div class="hero-decoracion">
+
+            <div class="circulo">
+                📚
+            </div>
+
+            <div class="burbuja burbuja-1">✦</div>
+
+            <div class="burbuja burbuja-2">✧</div>
+
+            <div class="burbuja burbuja-3">📖</div>
+
+            <div class="burbuja burbuja-4">⭐</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================= -->
+    <!-- 3. ESTADISTICAS -->
+    <!-- ================================= -->
+
+    <section class="estadisticas" id="estadisticas">
+
+        <article class="estadistica">
+
+            <span class="estadistica-icono">📚</span>
+
+            <h2 id="totalLibros">0</h2>
+
+            <p>Libros registrados</p>
+
+        </article>
+
+
+        <article class="estadistica">
+
+            <span class="estadistica-icono">✅</span>
+
+            <h2 id="totalDisponibles">0</h2>
+
+            <p>Libros disponibles</p>
+
+        </article>
+
+
+        <article class="estadistica">
+
+            <span class="estadistica-icono">📕</span>
+
+            <h2 id="totalPrestados">0</h2>
+
+            <p>Libros prestados</p>
+
+        </article>
+
+
+        <article class="estadistica">
+
+            <span class="estadistica-icono">🏷️</span>
+
+            <h2 id="totalCategorias">3</h2>
+
+            <p>Categorías principales</p>
+
+        </article>
+
+    </section>
+
+
+    <main>
+
+
+        <!-- ================================= -->
+        <!-- 4. CATALOGO DE LIBROS -->
+        <!-- ================================= -->
+
+        <section class="seccion" id="catalogo">
+
+            <div class="titulo-seccion">
+
+                <span>DESCUBRE NUESTRA COLECCIÓN</span>
+
+                <h2>Explora nuestro catálogo</h2>
+
+                <p>
+                    Encuentra el libro perfecto para alimentar
+                    tu imaginación y ampliar tus conocimientos.
+                </p>
+
+            </div>
+
+
+            <!-- FILTROS POR CATEGORIA -->
+
+            <div class="filtros" id="filtrosCategorias">
+
+                <button
+                    class="filtro activo"
+                    type="button"
+                    data-categoria="Todos"
+                    aria-pressed="true">
+
+                    🌟 Todos
+
+                </button>
+
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-categoria="Literatura"
+                    aria-pressed="false">
+
+                    📖 Literatura
+
+                </button>
+
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-categoria="Ciencia"
+                    aria-pressed="false">
+
+                    🔬 Ciencia
+
+                </button>
+
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-categoria="Historia"
+                    aria-pressed="false">
+
+                    🏛️ Historia
+
+                </button>
+
+            </div>
+
+
+            <!-- ORDENAMIENTO -->
+
+            <div class="catalogo-controles">
+
+                <div class="resultado-texto">
+
+                    <p id="contadorResultados">
+                        Mostrando todos los libros
+                    </p>
+
+                </div>
+
+
+                <div class="ordenar">
+
+                    <label for="ordenLibros">
+                        Ordenar por:
+                    </label>
+
+                    <select id="ordenLibros">
+
+                        <option value="predeterminado">
+                            Recomendados
+                        </option>
+
+                        <option value="titulo">
+                            Nombre A - Z
+                        </option>
+
+                        <option value="autor">
+                            Autor
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- TARJETAS GENERADAS CON JAVASCRIPT -->
+
+            <div class="libros-grid" id="contenedor-libros">
+
+                <!-- JavaScript insertará las tarjetas aquí -->
+
+            </div>
+
+
+            <!-- MENSAJE SIN RESULTADOS -->
+
+            <div class="sin-resultados" id="sin-resultados" hidden>
+
+                <span>🔎</span>
+
+                <h3>No encontramos libros</h3>
+
+                <p>
+                    Intenta buscar otro título, autor o categoría.
+                </p>
+
+                <button type="button" id="limpiarBusqueda">
+                    Limpiar búsqueda
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- 5. NOVEDADES -->
+        <!-- ================================= -->
+
+        <section class="seccion novedades" id="novedades">
+
+            <div class="titulo-seccion">
+
+                <span>RECIÉN INCORPORADOS</span>
+
+                <h2>✨ Últimas novedades</h2>
+
+                <p>
+                    Descubre los libros que se han incorporado
+                    recientemente a nuestra colección.
+                </p>
+
+            </div>
+
+
+            <div class="novedades-grid" id="lista-novedades">
+
+                <!-- Libros nuevos generados con JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- 6. LIBROS MAS LEIDOS -->
+        <!-- ================================= -->
+
+        <section class="populares" id="populares">
+
+            <div class="titulo-seccion">
+
+                <span>LOS FAVORITOS DE LOS ESTUDIANTES</span>
+
+                <h2>⭐ Libros más leídos</h2>
+
+                <p>
+                    Conoce las lecturas que despiertan
+                    mayor interés entre los estudiantes.
+                </p>
+
+            </div>
+
+
+            <div class="populares-grid" id="lista-populares">
+
+                <!-- Ranking generado con JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- 7. MIS LIBROS FAVORITOS -->
+        <!-- ================================= -->
+
+        <section class="seccion favoritos" id="favoritos">
+
+            <div class="titulo-seccion">
+
+                <span>TU ESPACIO PERSONAL</span>
+
+                <h2>❤️ Mis libros favoritos</h2>
+
+                <p>
+                    Guarda los libros que más te interesan
+                    para encontrarlos fácilmente.
+                </p>
+
+            </div>
+
+
+            <div class="favoritos-grid" id="lista-favoritos">
+
+                <!-- Favoritos generados con JavaScript -->
+
+            </div>
+
+
+            <p class="mensaje-favoritos" id="mensajeFavoritos">
+                Todavía no tienes libros favoritos.
+                Explora el catálogo y agrega tus lecturas preferidas.
+            </p>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- 8. INFORMACION DE LA BIBLIOTECA -->
+        <!-- ================================= -->
+
+        <section class="sobre-biblioteca" id="sobre">
+
+            <div class="sobre-contenido">
+
+                <span class="etiqueta">
+                    📚 SOBRE NOSOTROS
+                </span>
+
+                <h2>
+                    Más que libros,
+                    <span>un espacio para aprender.</span>
+                </h2>
+
+                <p>
+                    BiblioTech Escolar es una propuesta digital
+                    que busca facilitar el acceso al catálogo
+                    de nuestra biblioteca educativa.
+
+                    Nuestra finalidad es fomentar la lectura,
+                    fortalecer el aprendizaje y motivar a los
+                    estudiantes a descubrir nuevos conocimientos.
+                </p>
+
+                <div class="sobre-beneficios">
+
+                    <div>
+                        <span>✓</span>
+                        Búsqueda rápida de libros
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Organización por categorías
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Información de disponibilidad
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Fomento de la lectura
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="sobre-imagen">
+
+                <div class="sobre-icono">
+                    🏫
+                </div>
+
+                <h3>Una biblioteca sin límites</h3>
+
+                <p>
+                    Cada página es una nueva oportunidad
+                    para aprender.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- 9. NORMATIVAS DE PRESTAMO -->
+        <!-- ================================= -->
+
+        <section class="normas" id="normas">
+
+            <div class="titulo-seccion">
+
+                <span>INFORMACIÓN IMPORTANTE</span>
+
+                <h2>📋 Normativas de préstamo</h2>
+
+                <p>
+                    Cuidar los libros es responsabilidad de todos.
+                </p>
+
+            </div>
+
+
+            <div class="normas-grid">
+
+
+                <article class="norma">
+
+                    <div class="norma-icono">🪪</div>
+
+                    <h3>01. Registro</h3>
+
+                    <p>
+                        Presentar los datos del estudiante
+                        al solicitar un libro.
+                    </p>
+
+                </article>
+
+
+                <article class="norma">
+
+                    <div class="norma-icono">📅</div>
+
+                    <h3>02. Plazo</h3>
+
+                    <p>
+                        Respetar la fecha de devolución
+                        establecida por el encargado.
+                    </p>
+
+                </article>
+
+
+                <article class="norma">
+
+                    <div class="norma-icono">🤝</div>
+
+                    <h3>03. Cuidado</h3>
+
+                    <p>
+                        Evitar rayar, romper o maltratar
+                        las páginas de los libros.
+                    </p>
+
+                </article>
+
+
+                <article class="norma">
+
+                    <div class="norma-icono">📚</div>
+
+                    <h3>04. Devolución</h3>
+
+                    <p>
+                        Entregar el libro directamente
+                        al encargado de la biblioteca.
+                    </p>
+
+                </article>
+
+
+                <article class="norma">
+
+                    <div class="norma-icono">🔄</div>
+
+                    <h3>05. Renovación</h3>
+
+                    <p>
+                        Consultar con el encargado si
+                        es posible ampliar el préstamo.
+                    </p>
+
+                </article>
+
+
+                <article class="norma">
+
+                    <div class="norma-icono">⚠️</div>
+
+                    <h3>06. Responsabilidad</h3>
+
+                    <p>
+                        Informar inmediatamente si un libro
+                        presenta daños o inconvenientes.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="aviso">
+
+                💡 <strong>Recuerda:</strong>
+
+                Esta plataforma permite consultar el catálogo.
+                Los préstamos físicos se realizan en la
+                biblioteca escolar.
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- 10. FORMULARIO DE SOLICITUD -->
+        <!-- ================================= -->
+
+        <section class="solicitud" id="solicitud">
+
+            <div class="titulo-seccion">
+
+                <span>QUIERO LEER</span>
+
+                <h2>📝 Solicita un libro</h2>
+
+                <p>
+                    Completa los siguientes datos para registrar
+                    una solicitud de préstamo de demostración.
+                </p>
+
+            </div>
+
+
+            <form class="formulario-solicitud" id="formPrestamo">
+
+                <div class="campo">
+
+                    <label for="nombreEstudiante">
+                        Nombre del estudiante
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombreEstudiante"
+                        name="nombreEstudiante"
+                        placeholder="Escribe tu nombre"
+                        maxlength="80"
+                        required>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="gradoEstudiante">
+                        Grado y sección
+                    </label>
+
+                    <input
+                        type="text"
+                        id="gradoEstudiante"
+                        name="gradoEstudiante"
+                        placeholder="Ejemplo: 4° D"
+                        maxlength="20"
+                        required>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="libroSolicitado">
+                        Libro que deseas solicitar
+                    </label>
+
+                    <select
+                        id="libroSolicitado"
+                        name="libroSolicitado"
+                        required>
+
+                        <option value="">
+                            Selecciona un libro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="fechaSolicitud">
+                        Fecha de solicitud
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fechaSolicitud"
+                        name="fechaSolicitud"
+                        required>
+
+                </div>
+
+
+                <button type="submit" class="btn-solicitud">
+                    📩 Registrar solicitud
+                </button>
+
+
+                <p class="formulario-mensaje" id="mensajeSolicitud" role="status" aria-live="polite"></p>
+
+            </form>
+
+            <p class="nota-solicitud">
+                Esta función es una demostración académica.
+                La solicitud no confirma un préstamo real.
+            </p>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- 11. PREGUNTAS FRECUENTES -->
+        <!-- ================================= -->
+
+        <section class="preguntas" id="preguntas">
+
+            <div class="titulo-seccion">
+
+                <span>TE AYUDAMOS</span>
+
+                <h2>❓ Preguntas frecuentes</h2>
+
+                <p>
+                    Resuelve algunas dudas sobre nuestra biblioteca.
+                </p>
+
+            </div>
+
+
+            <div class="preguntas-contenedor">
+
+                <details class="pregunta">
+
+                    <summary>
+                        ¿Cómo puedo encontrar un libro?
+                    </summary>
+
+                    <p>
+                        Utiliza el buscador principal e introduce
+                        el título, autor o categoría del libro.
+                    </p>
+
+                </details>
+
+
+                <details class="pregunta">
+
+                    <summary>
+                        ¿Puedo solicitar un préstamo por internet?
+                    </summary>
+
+                    <p>
+                        Puedes registrar una solicitud de demostración
+                        en esta plataforma. El préstamo físico debe
+                        confirmarse con el encargado.
+                    </p>
+
+                </details>
+
+
+                <details class="pregunta">
+
+                    <summary>
+                        ¿Qué hago si un libro no está disponible?
+                    </summary>
+
+                    <p>
+                        Puedes consultar con el encargado de la
+                        biblioteca para conocer su disponibilidad.
+                    </p>
+
+                </details>
+
+
+                <details class="pregunta">
+
+                    <summary>
+                        ¿Dónde se devuelven los libros?
+                    </summary>
+
+                    <p>
+                        Los libros deben entregarse directamente
+                        al encargado de la biblioteca escolar.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- 12. LLAMADO A LA LECTURA -->
+        <!-- ================================= -->
+
+        <section class="frase-final">
+
+            <span>✨</span>
+
+            <h2>
+                Leer es viajar sin moverse
+                y descubrir sin límites.
+            </h2>
+
+            <p>
+                Tu próxima aventura comienza con un libro.
+            </p>
+
+            <a href="#catalogo" class="btn-explorar">
+                Explorar libros →
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================================= -->
+    <!-- 13. PIE DE PAGINA -->
+    <!-- ================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-superior">
+
+            <div class="footer-marca">
+
+                <a href="#inicio" class="footer-logo">
+                    📚 Biblio<span>Tech</span>
+                </a>
+
+                <p>
+                    El conocimiento es la llave del futuro.
+                    Fomentamos la lectura y el aprendizaje
+                    mediante la tecnología.
+                </p>
+
+            </div>
+
+
+            <div class="footer-enlaces">
+
+                <h3>Navegación</h3>
+
+                <a href="#inicio">Inicio</a>
+
+                <a href="#catalogo">Catálogo</a>
+
+                <a href="#novedades">Novedades</a>
+
+                <a href="#populares">Más leídos</a>
+
+            </div>
+
+
+            <div class="footer-enlaces">
+
+                <h3>Información</h3>
+
+                <a href="#sobre">Sobre nosotros</a>
+
+                <a href="#normas">Normativas</a>
+
+                <a href="#solicitud">Solicitudes</a>
+
+                <a href="#preguntas">Ayuda</a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-linea"></div>
+
+
+        <div class="footer-inferior">
+
+            <p class="copyright">
+                Proyecto educativo BiblioTech Escolar © 2026
+            </p>
+
+            <a href="#inicio">
+                Volver arriba ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================================= -->
+    <!-- 14. MODAL DE INFORMACION DE LIBROS -->
+    <!-- ================================= -->
+
+    <div
+        class="modal"
+        id="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitulo"
+        aria-hidden="true"
+        hidden>
+
+        <div class="modal-contenido">
+
+            <button
+                class="cerrar-modal"
+                id="cerrarModal"
+                type="button"
+                aria-label="Cerrar ventana">
+
+                ✕
+
+            </button>
+
+            <div id="modalContenido">
+
+                <!-- Información generada con JavaScript -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- 15. NOTIFICACIONES -->
+    <!-- ================================= -->
+
+    <div
+        class="notificacion"
+        id="notificacion"
+        role="status"
+        aria-live="polite"
+        hidden>
+
+        <span id="iconoNotificacion">✅</span>
+
+        <p id="textoNotificacion">
+            Operación realizada.
+        </p>
+
+    </div>
+
+
+    <!-- BOTON PARA SUBIR -->
+
+    <button
+        class="btn-subir"
+        id="btnSubir"
+        type="button"
+        aria-label="Volver al inicio">
+
+        ↑
+
+    </button>
+
+
+    <!-- ================================= -->
+    <!-- 16. CONEXION CON JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script src="funciones.js" defer></script>
+
+</body>
+
+</html>
